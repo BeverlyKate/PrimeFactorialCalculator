@@ -19,6 +19,7 @@ $(document).ready(function () {
   $("#Btn-Factorial").click(function () {
     const input = getInput();
     console.log(getFactorialNaive(input));
+    addToHistory(getFactorialNaive(input));
   });
 
   //helper functions
