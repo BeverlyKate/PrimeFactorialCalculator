@@ -7,7 +7,14 @@ app.use("/src", express.static("src"));
 const port = process.env.PORT || 8080;
 
 app.get("/", (req, res) => {
-  res.send("https://primefactorialcalculator.onrender.com//");
+  res.render("prime-factorial", (err, html) => {
+    if (err) {
+      console.error("EJS render error:", err);
+      res.status(500).send("An error occurred while rendering the page.");
+    } else {
+      res.send(html);
+    }
+  });
 });
 
 //app.listen(3000);
