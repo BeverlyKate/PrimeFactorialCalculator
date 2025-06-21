@@ -7,6 +7,7 @@ app.use("/src", express.static("src"));
 const port = process.env.PORT || 8080;
 
 app.get("/", (req, res) => {
+  res.send("Hello world");
   res.render("prime-factorial");
 });
 
